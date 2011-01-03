@@ -9,6 +9,8 @@ alias tmm="mate *"
 alias tmr="mate app config config.ru features Gemfile lib db public spec tmp Rakefile Capfile README"
 
 # Rails
+alias rc='rails console'
+alias rct='rails console test'
 alias sc='./script/console'
 alias scu='./script/cucumber -s'
 alias scuf='./script/cucumber -s -t @focus'
