@@ -1,48 +1,74 @@
 # personal SSH shortcuts
-alias alcyone='ssh brianvh@alcyone.dartmouth.edu'
-alias area51='ssh brianvh@area51.dartmouth.edu'
-alias badlands='ssh brianvh@badlands.dartmouth.edu'
-alias bayou='ssh brianvh@bayou.dartmouth.edu'
-alias cobweb='ssh brianvh@cobweb.dartmouth.edu'
-alias dbs='ssh dbsadmin@merrimack.dartmouth.edu'
-alias dev='ssh brianvh@dev.dartmouth.edu'
-alias devw='ssh webops@dev.dartmouth.edu'
-alias electra='ssh brianvh@electra.dartmouth.edu'
-alias evg='ssh brianvh@everglades.dartmouth.edu'
-alias grass='ssh brianvh@grassland.dartmouth.edu'
-alias klatch='ssh brianvh@klatch.dartmouth.edu'
-alias maia='ssh brianvh@maia.dartmouth.edu'
-alias media='ssh brianvh@media.dartmouth.edu'
-alias news='ssh brianvh@merrimack.dartmouth.edu'
-alias plateau='ssh brianvh@plateau.dartmouth.edu'
-alias search='ssh brianvh@search.dartmouth.edu'
-alias scrubland='ssh brianvh@scrubland.dartmouth.edu'
-alias taygete='ssh brianvh@taygete.dartmouth.edu'
-alias torridon='ssh brianvh@torridon.dartmouth.edu'
-alias tundra='ssh brianvh@tundra.dartmouth.edu'
-alias veldt='ssh brianvh@veldt.dartmouth.edu'
-alias webapp='ssh brianvh@webapp.dartmouth.edu'
-alias www='ssh brianvh@www.dartmouth.edu'
+alias alcyone='_ssh alcyone'
+alias badlands='_ssh badlands'
+alias bayou='_ssh bayou'
+alias cobweb='_ssh cobweb'
+alias dev='_ssh dev'
+alias devw='_ssh dev webops'
+alias dbs='_ssh merrimack dbsadmin'
+alias dinwiddie='_ssh dinwiddie'
+alias electra='_ssh electra'
+alias hedgehog='_ssh hedgehog'
+alias maia='_ssh maia'
+alias media='_ssh media'
+alias quirm='_ssh quirm'
+alias ridcully='_ssh ridcully'
+alias rincewind='_ssh rincewind'
+alias search='_ssh search'
+alias taiga='_ssh taiga'
+alias taygete='_ssh taygete'
+alias torridon='_ssh torridon'
+alias tundra='_ssh tundra'
+alias stibbons='_ssh stibbons'
+alias webapp='_ssh webapp'
+alias www='_ssh www'
 
 # Rails app SSH shortcuts
-alias b_dfd='ssh dfd@badlands.dartmouth.edu'
-alias b_dofcomm='ssh dofcomm@badlands.dartmouth.edu'
-alias b_dtaward='ssh dtaward@badlands.dartmouth.edu'
-alias b_facballots='ssh facballots@badlands.dartmouth.edu'
-alias b_hosting='ssh hosting@badlands.dartmouth.edu'
-alias b_inyourcity='ssh inyourcity@badlands.dartmouth.edu'
-alias b_itrack='ssh itrack@badlands.dartmouth.edu'
-alias b_scholars='ssh scholars@badlands.dartmouth.edu'
-alias b_studygroups='ssh studygroups@badlands.dartmouth.edu'
-alias b_ugresearch='ssh ugresearch@badlands.dartmouth.edu'
-alias b_wisp='ssh wisp@badlands.dartmouth.edu'
-alias b_writing='ssh writing@badlands.dartmouth.edu'
-alias t_frontier='ssh frontier@tundra.dartmouth.edu'
-alias t_ists='ssh ists@tundra.dartmouth.edu'
-alias t_ugr='ssh ugresearch@tundra.dartmouth.edu'
-alias t_urchin='ssh urchin@tundra.dartmouth.edu'
+alias b_dfd='b_ssh dfd'
+alias b_dofcomm='b_ssh dofcomm'
+alias b_dtaward='b_ssh dtaward'
+alias b_facballots='b_ssh facballots'
+alias b_hosting='b_ssh hosting'
+alias b_inyourcity='b_ssh inyourcity'
+alias b_itrack='b_ssh itrack'
+alias b_scholars='b_ssh scholars'
+alias b_studygroups='b_ssh studygroups'
+alias b_ugresearch='b_ssh ugresearch'
+alias b_wisp='b_ssh wisp'
+alias b_writing='b_ssh writing'
+alias q_dfd='q_ssh dfd'
+alias q_itrack='q_ssh itrack'
 
-# push_key
-push_key() {
-  ssh $1 'cat id_rsa.pub >> .ssh/authorized_keys ; rm id_rsa.pub'
+# SFTP mount shortcuts
+alias m_taiga='_sftp taiga'
+alias m_media='_sftp media'
+alias m_www='_sftp www'
+
+_ssh() {
+  ssh $(_user $2)@$1.dartmouth.edu
 }
+
+b_ssh() {
+  ssh $1@badlands.dartmouth.edu
+}
+
+t_ssh() {
+  ssh $1@tundra.dartmouth.edu
+}
+
+q_ssh() {
+  ssh $1@quirm.dartmouth.edu
+}
+
+_sftp() {
+  open sftp://$(_user $2)@$1.dartmouth.edu
+}
+
+_user() {
+  if [[ -n $1 ]]; then
+    echo "$1"
+  else
+    echo "brianvh"
+  fi
+}
+
