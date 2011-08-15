@@ -22,7 +22,7 @@ export PAGER='more -F -r'
 export CLICOLOR
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export MANPATH="/usr/local/man:$MANPATH"
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/mongo/bin:$PATH
 export GIT_EDITOR='mate -w'
 export RUBYOPT=rubygems
 export TM_SVN=/usr/local/bin/svn
