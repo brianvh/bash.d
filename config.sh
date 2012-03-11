@@ -21,14 +21,19 @@ export EDITOR=mate
 export PAGER='more -F -r'
 export CLICOLOR
 export LSCOLORS=gxfxcxdxbxegedabagacad
-export MANPATH="/usr/local/man:$MANPATH"
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/mongo/bin:$PATH
 export GIT_EDITOR='mate -w'
 export RUBYOPT=rubygems
 export TM_SVN=/usr/local/bin/svn
 export TM_RUBY=/usr/local/bin/ruby
 export CLASSPATH=/usr/local/lib/junit.jar
 export TIMETRAP_CONFIG_FILE=~/Documents/kiewit/.timetrap.yml
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
+export ANT_HOME=/usr/share/ant
+export MAVEN_HOME=/usr/share/maven
+export JUNIT_HOME=/usr/share/junit
+export GROOVY_HOME=/usr/share/groovy
+export MANPATH="/usr/local/man:$MANPATH"
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/mongo/bin:$GROOVY_HOME/bin:$PATH
 
 export LESS_TERMCAP_mb=$'\E[00;33m'
 export LESS_TERMCAP_md=$'\E[00;33m'

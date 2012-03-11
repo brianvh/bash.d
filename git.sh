@@ -30,6 +30,11 @@ function gch() {
   git clone git://github.com/$USER/$1.git
 }
 
+# Git clone from Dev
+function gcd() {
+  git clone webops@dev.dartmouth.edu:git/$1.git
+}
+
 # Quickly clobber a file and checkout
 function grf() { 
   rm $1

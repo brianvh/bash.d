@@ -6,12 +6,13 @@ alias err_log="open -a Console /var/log/apache2/error_log"
 alias tm="mate"
 alias tmb="mate ~/.bashrc ~/.bash.d"
 alias tmm="mate *"
-alias tmr="mate .gitignore app bin config* features Gemfile lib db public spec tmp *.gemspec Rakefile README* LICENSE*"
+alias tmr="mate .gitignore app bin config* features Gemfile lib db public spec tmp views *.gemspec Rakefile README* LICENSE*"
 
 # Bundler
 alias bec='bundle exec cucumber'
-alias ber='bundle exec rspec'
-alias bers='bundle exec rspec spec'
+alias ber='bundle exec rake'
+alias berp='bundle exec rspec'
+alias berps='bundle exec rspec spec'
 
 # Rails
 alias rc='rails console'
