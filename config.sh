@@ -10,7 +10,7 @@ EGREEN="\[\033[1;32m\]"
 EYELLOW="\[\033[1;33m\]"
 
 function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "•"
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "•"
 }
 
 PS1="$YELLOW[\h] $WHITE\w$RED\$(__git_ps1 \" (%s\$(parse_git_dirty))\")$NO_COLOR: "
@@ -23,17 +23,12 @@ export CLICOLOR
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export GIT_EDITOR='mate -w'
 export RUBYOPT=rubygems
-export TM_SVN=/usr/local/bin/svn
-export TM_RUBY=/usr/local/bin/ruby
+export NODE_PATH="/usr/local/lib/node"
 export CLASSPATH=/usr/local/lib/junit.jar
 export TIMETRAP_CONFIG_FILE=~/Documents/kiewit/.timetrap.yml
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
-export ANT_HOME=/usr/share/ant
-export MAVEN_HOME=/usr/share/maven
-export JUNIT_HOME=/usr/share/junit
-export GROOVY_HOME=/usr/share/groovy
 export MANPATH="/usr/local/man:$MANPATH"
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/mongo/bin:$GROOVY_HOME/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/mongo/bin:/usr/local/share/npm/bin:$PATH
 
 export LESS_TERMCAP_mb=$'\E[00;33m'
 export LESS_TERMCAP_md=$'\E[00;33m'
